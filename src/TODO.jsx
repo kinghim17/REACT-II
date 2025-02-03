@@ -1,88 +1,88 @@
-// // main app 
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import { CreateTodo } from './components/CreateTodo'
-// import { Todos } from './components/Todos'
+// main app 
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import { CreateTodo } from './components/CreateTodo'
+import { Todos } from './components/Todos'
 
-// // useEffect hook
-// function App() {
-//   const [todos, setTodos] = useState([]);
+// useEffect hook
+function App() {
+  const [todos, setTodos] = useState([]);
 
 
-//   return (
-//     <div>
-//       <CreateTodo></CreateTodo>
-//       <Todos todos={todos}></Todos>
-//     </div>
-//   )
-// }
+  return (
+    <div>
+      <CreateTodo></CreateTodo>
+      <Todos todos={todos}></Todos>
+    </div>
+  )
+}
 
-// export default App
+export default App
 
-// // components
-// //create todo
-// import { useState } from "react";
+// components
+//create todo
+import { useState } from "react";
 
-// export function CreateTodo(props) {
-//     // react-query
-//     const [title, setTitle] = useState("");
-//     const [description, setDescription] = useState("");
+export function CreateTodo(props) {
+    // react-query
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
 
-//     return <div>
-//         <input id="title" style={{
-//             padding: 10,
-//             margin: 10
-//         }} type="text" placeholder="title" onChange={function(e) {
-//             const value = e.target.value;
-//             setTitle(e.target.value);
-//         }}></input> <br />
+    return <div>
+        <input id="title" style={{
+            padding: 10,
+            margin: 10
+        }} type="text" placeholder="title" onChange={function(e) {
+            const value = e.target.value;
+            setTitle(e.target.value);
+        }}></input> <br />
     
-//         <input id="desc" style={{
-//             padding: 10,
-//             margin: 10
-//         }} type="text" placeholder="description" onChange={function(e) {
-//             const value = e.target.value;
-//             setDescription(e.target.value);
-//         }}></input> <br />
+        <input id="desc" style={{
+            padding: 10,
+            margin: 10
+        }} type="text" placeholder="description" onChange={function(e) {
+            const value = e.target.value;
+            setDescription(e.target.value);
+        }}></input> <br />
 
-//         <button style={{
-//             padding: 10,
-//             margin: 10
-//         }} onClick={() => {
-//             // axios
-//             fetch("http://localhost:3000/todo", {
-//                 method: "POST",
-//                 body: JSON.stringify({
-//                     title: title,
-//                     description: description
-//                 }),
-//                 headers: {
-//                     "Content-type": "application/json"
-//                 }
-//             })
-//                 .then(async function(res) {
-//                     const json = await res.json();
-//                     alert("Todo added");
-//                 })
-//         }}>Add a todo</button>
-//     </div>
-// }
+        <button style={{
+            padding: 10,
+            margin: 10
+        }} onClick={() => {
+            // axios
+            fetch("http://localhost:3000/todo", {
+                method: "POST",
+                body: JSON.stringify({
+                    title: title,
+                    description: description
+                }),
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+                .then(async function(res) {
+                    const json = await res.json();
+                    alert("Todo added");
+                })
+        }}>Add a todo</button>
+    </div>
+}
 
-// //only to do
-// export function Todos({todos}) {
+//only to do
+export function Todos({todos}) {
 
-//     return <div>
-//         {todos.map(function(todo) {
-//             return <div>
-//                 <h1>{todo.title}</h1>
-//                 <h2>{todo.description}</h2>
-//                 <button>{todo.completed == true ? "Completed" : "Mark as Complete"}</button>
-//             </div>
-//         })}
-//     </div>
-// }
+    return <div>
+        {todos.map(function(todo) {
+            return <div>
+                <h1>{todo.title}</h1>
+                <h2>{todo.description}</h2>
+                <button>{todo.completed == true ? "Completed" : "Mark as Complete"}</button>
+            </div>
+        })}
+    </div>
+}
 
 
 
