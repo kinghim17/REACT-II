@@ -1,0 +1,28 @@
+1:
+const [count, setCount] = useState(0);
+A state is a JavaScript object managed within a React component that holds dynamic data. 
+It allows React components to manage and react to changes in their data.
+count is the state variable that stores the current value of the counter.
+setCount is a state updater function that is used to update the value of count.
+useState(0) initializes the count state to 0.
+2:
+What is the Dependency Array?
+The dependency array is the second argument passed to the useEffect hook.
+It tells React when to re-run the effect.
+Based on the values in the array, React determines whether the effect should run again after the component re-renders.
+3:
+You use useEffect for tasks like:
+
+Fetching data (e.g., from an API).
+Directly interacting with the DOM (e.g., adding event listeners).
+Running timers (e.g., setTimeout or setInterval).
+Cleaning up resources (e.g., removing event listeners, canceling network requests)
+4:
+seCallback is a React hook that returns a memoized version of a function. It ensures the function reference stays the same between renders unless its dependencies change.
+This is useful when passing functions to child components or using them in useEffect
+5:
+6:
+7:
+8:
+9:
+10:
